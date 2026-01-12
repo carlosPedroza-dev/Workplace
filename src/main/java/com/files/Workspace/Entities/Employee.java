@@ -32,5 +32,4 @@ public class Employee {
     @Column(name = "employee_status", nullable = false)
     @Enumerated(EnumType.STRING)
     private EmployeeStatus employeeStatus;
-
 }
