@@ -18,4 +18,6 @@ public class Department {
 
     @Column(name = "department_name",unique = true,nullable = false)
     private String departmentName;
+
+
 }

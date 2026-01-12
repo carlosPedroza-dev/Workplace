@@ -23,6 +23,7 @@ public class Employee {
     @Column(name = "employee_email",nullable = false,unique = true)
     private String employeeEmail;
 
+    @ManyToOne
     @Column(name = "employee_department",nullable = false)
     private Department employeeDepartment;
 
