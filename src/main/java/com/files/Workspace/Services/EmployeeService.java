@@ -2,6 +2,7 @@ package com.files.Workspace.Services;
 
 import com.files.Workspace.DTOs.EmployeeDTO;
 import com.files.Workspace.Entities.Employee;
+import com.files.Workspace.Exceptions.NotFoundException;
 import com.files.Workspace.Mappers.DepartmentMapper;
 import com.files.Workspace.Mappers.EmployeeMapper;
 import com.files.Workspace.Repositories.EmployeeRepository;
@@ -37,11 +38,24 @@ public class EmployeeService implements IEmployeeService
 
     @Override
     public EmployeeDTO updateEmployee(Long id, EmployeeDTO employeeDTO) {
-        return null;
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(() -> new NotFoundException("Employee not found"));
+
+        employee.setEmployeeId(employeeDTO.getId());
+        employee.setEmployeeName(employeeDTO.getName());
+        employee.setEmployeeEmail(employeeDTO.getEmail());
+        employee.setEmployeeDepartment(DepartmentMapper.toEntity(employeeDTO.getDepartment()));
+        employee.setEmployeeStatus(employeeDTO.getStatus());
+
+        return EmployeeMapper.toDTO(employeeRepository.save(employee));
     }
 
     @Override
     public void deleteEmployee(Long id) {
 
+        if (!employeeRepository.existsById(id)){
+            throw new NotFoundException("employee not found");
+        }
+        employeeRepository.deleteById(id);
     }
 }
