@@ -12,7 +12,6 @@ public static EmployeeDTO toDTO(EmployeeDTO employee){
             .id(employee.getId())
             .name(employee.getName())
             .email(employee.getEmail())
-            .departments(employee.getDepartments())
             .status(employee.getStatus())
             .build();
 }
