@@ -27,6 +27,7 @@ public class Employee {
     @Column(name = "employee_department",nullable = false)
     private Department employeeDepartment;
 
+    @ManyToMany
     @Column(name = "employee_role",nullable = false)
     private String employeeRole;
 

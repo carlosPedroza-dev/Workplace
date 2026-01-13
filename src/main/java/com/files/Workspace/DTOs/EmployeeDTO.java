@@ -1,15 +1,18 @@
 package com.files.Workspace.DTOs;
 
-import jakarta.persistence.ManyToOne;
+import com.files.Workspace.Entities.EmployeeStatus;
+
 import lombok.Builder;
 import lombok.Data;
 import java.util.List;
 
+
 @Builder
 @Data
-public class EmployeeDTO {
+public class EmployeeDTO{
     private Long id;
     private String name;
     private String email;
-    private String status;
+    private DepartmentDTO department;
+    private EmployeeStatus status;
 }
