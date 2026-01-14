@@ -1,5 +1,6 @@
 package com.files.Workspace.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -17,6 +18,7 @@ public class User {
     private Long userId;
     @Column(name = "user_name",nullable = false)
     private String userName;
+    @JsonIgnore
     @Column(name = "user_password",nullable = false)
     private String userPassword;
     @Column(name = "user_email",nullable = false)
