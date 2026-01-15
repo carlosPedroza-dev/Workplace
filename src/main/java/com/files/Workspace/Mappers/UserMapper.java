@@ -4,7 +4,7 @@ import com.files.Workspace.Entities.User;
 import com.files.Workspace.DTOs.UserDTO;
 
 public class UserMapper {
-    public UserDTO toDto(User user){
+    public static UserDTO toDto(User user){
         if(user == null){
             return null;
         }

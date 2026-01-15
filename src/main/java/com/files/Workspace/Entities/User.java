@@ -24,7 +24,7 @@ public class User {
     @Column(name = "user_email",nullable = false)
     private String userEmail;
     @Column(name = "user_phone",nullable = false)
-    private int userPhone;
+    private String userPhone;
     @Column(name = "user_role",nullable = false)
     @Enumerated(value = EnumType.STRING)
     private Role userRole;

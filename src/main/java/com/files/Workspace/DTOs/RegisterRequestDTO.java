@@ -1,15 +1,17 @@
 package com.files.Workspace.DTOs;
 
 import com.files.Workspace.Entities.Role;
-import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Builder
+@Getter
+@Setter
 @Data
-public class UserDTO {
-    private Long id;
+public class RegisterRequestDTO {
     private String name;
     private String email;
+    private String password;
     private String phone;
     private Role role;
 }
